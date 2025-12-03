@@ -1,15 +1,25 @@
 \section{Sampling Distributions}
 \[g(y_1,y_2) = f(x_1,x_2) \times |\mathbf{J}|\]
-\[\mathbf{J} = \begin{matrix}
+\[\mathbf{J} = \begin{bmatrix}
     \frac{\partial x_1}{\partial y_1} & \frac{\partial x_1}{\partial y_2} \\
     \frac{\partial x_2}{\partial y_1} & \frac{\partial x_2}{\partial y_2}
-\end{matrix}\]
+\end{bmatrix}\]
 \[\bar{X} = \frac{1}{n}\sum X_i \text{ | } S^2 = \frac{1}{n-1}\sum (X_i - \bar{X})^2\]
 \[\bar{X} \sim \text{N}(\mu,\frac{\sigma^2}{n}) \text{ | } \bar{X} \perp S^2\]
 \[\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1} \text{ | } \sum Z_i^2 \sim \chi^2(n)\]
-\[T = \frac{Z}{\sqrt{\frac{Y}{n}}} \sim \text{t}(n), Y \sim \chi^2(n)\]
 \[T = \frac{\sqrt{n}(\bar{X} - \mu)}{S} \sim \text{t}(n-1)\]
+\[T = \frac{Z}{\sqrt{\frac{Y}{n}}} \sim \text{t}(n), Y \sim \chi^2(n) \]
+\[t(n) = \frac{\Gamma(\frac{n+1}{2})}{\sqrt{\pi n}\Gamma(\frac{n}{2})}(1+\frac{t^2}{n})^{-\frac{n+1}{2}}\text{ | } 0 \text{ | } \frac{n}{n-2}\]
 \[W = \frac{\frac{U}{M}}{\frac{V}{n}} \sim \text{F}(m,n), U \sim \chi^2(m), V \sim \chi^2(n)\]
+\[F(m,n) = \frac{\Gamma(\frac{m+n}{2})}{\Gamma(\frac{m}{2})\Gamma(\frac{n}{2})}\]
+\[ \times(\frac{m}{n})^{\frac{m}{2}}\omega^{\frac{m}{2}-1}(1+\frac{m}{n}\omega)^{-\frac{m+n}{2}}\]
+\[\frac{n}{n-2} \text{ | } \frac{2n^2(m+n-2)}{m(n-2)^2(n-4)}\]
 \[\text{F}(X_{(n)}) =[F(x)]^n\]
-\[f_{X_{(r)}} = \frac{n!}{(r-1)!(n-r)!} f(x) [F(x)]^{r-1} [1-F(x)]^{n-r}\]
+\[f_{X_{(r)}} = \frac{n!}{(r-1)!(n-r)!}\]
+\[\times f(x) [F(x)]^{r-1} [1-F(x)]^{n-r}\]
+\[f_{rs} = \frac{n!}{(r-1)!(s-r-1)!(n-s)!}\]
+\[\times f(x_{(r)}) f(x_{(s)})[F(x_{(r)})]^{r-1}\]
+\[\times [F(x_{(s)}) - F(x_{(r)})]^{s-r-1} [1 - F(x_{(s)})]^{n-s}\]
+\[f_{1 \dots r}(x_1,\dots,x_r) = \frac{n!}{(n-r)!}f(x_{(1)})\dots f(x_{(r)})\]
+\[\times (1-F(x_{(r)}))^{n-r}\]
 \[\frac{\sqrt{n}(\bar{X}_n - \mu)}{\sigma} \xrightarrow{L} Z \sim N(0, 1), \forall \text{随机变量} X\]
